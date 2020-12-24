@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pitch</title>
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      border: 1px solid red;
+      padding: 0;
+    }
+
+    .outer_image {
+      width: 90%;
+      height: 200%;
+      border: 10px solid blue;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .outer_image img {
+      position: absolute;
+      margin-bottom: 30%;
+      width: 200%;
+      top: -25%;
+      border: 3px solid purple;
+      left: -50%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer_image" id="outer_image">
+
+    <img id="image"
+      src="https://d33wubrfki0l68.cloudfront.net/0db0f5c944a357deb0403da4df434c834e567b49/11523/images/home/hero-ui/hero-ui_2808w.jpg">
+  </div>
+
+  <script>
+    window.onscroll = changeDimensions;
+
+    function changeDimensions() {
+      let scroll = document.documentElement.scrollTop;
+      let newWidth = (200 - scroll / 6) + "%";
+      let newTop = (-25 + scroll / 10) + "%";
+      let newLeft = -50 + scroll / 12 + "%";
+      let newHeight = 100 - scroll / 14 + "%";
+
+      document.getElementById('image').style.width = newWidth;
+      document.getElementById('image').style.top = newTop;
+      document.getElementById('image').style.left = newLeft;
+      document.getElementById('image').style.height = newHeight;
+    }
+  </script>
+</body>
+
+</html>

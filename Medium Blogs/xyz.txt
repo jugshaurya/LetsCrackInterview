@@ -1,0 +1,18 @@
+Later on..
+Photo by Hal Gatewood on UnsplashInterview Season is the tensest season in the life of an individual and as a software developer whose interviews are coming up. It is the time to revise the concepts that I learned in past years because everything is going to be tested in the interview, well at least what I have written in my resume. While doing the revision in the field. There were some nifty questions in front of me that I thought must be shared and hence this article. 
+My Background goes from learning vanilla javascript and then moving on to ReactJS Library to write modular(well component) and clean code and later on adding Redux to manage the state and avoid prop drilling. One question that bugs me out is the difference between MVC architecture and Flux/Redux architecture. 
+First of all the 3-tier structure are the building blocks of a web application which includes the database, client, server (model, view, controller respectively). Both of them are design patterns helping us maintain, control, separate the layers/the chunk of files while building an application. The difference being Flux architecture is the same as MVC(what!) but with a different approach that focuses on unidirectional data flow(oh! ok!).
+In MVC architecture we have [views as clients], [controllers as servers] and [models as database]. Now you think yourself clients should not have direct access to the database so to secure the data(like other users data like their password) and that is what actually happens in MVC pattern. 
+MVC Storyline
+- User sees the views (the frontend pages) which have data embedded from the database.
+- User interact with views like clicking a button which inturn updates the views but here is the catch!
+- Updating the views means changing the data but since user can't directly change the data in database,server comes into the picture.
+- server is something over which a client make request for the resources mainly through HTTP methods(get,post,put,patch,delete) & server talks to the 3rd tier(database) to fetch the new data/resource and creates new views depending upon the data(means database results in new views that are then sent again to the client with the updated data).
+All good till now but Problems!!
+- Although indirectly [views changes models] and [models changes views] it results in clashes and affect the performance and inpredictibilty of the final result. HOW? (read -> as then) view1 updates model1 -> model1 updates view2 -> view2 updates model2 and model1 -> model1 and model2 updates view1 and view2. GOT Confused right? this is what developers at facebook feels too. since facebook have more that 50,000 files(components), the data maintainibilty/consistency became the problem (first in their newsfeeds). so they come up with  the solution and named it Flux/Redux Architecture.(Note that flux is the better version of MVC only it just helps the data flow to become maintainable).
+Flux to rescue with its Unidirectional Data Flow
+what we want to do : 
+Instead of views updating the models, we appointed a bodyguard known as the action, every update from views to models goes through this action bodyguard, which handles those multiple updates and let only a single update at a time change the data so to avoid the data inconsistency. Actions dispatches(give the key to the door behind which money is hidden) an event to let a view update the data
+
+
+Chunky vs Chatty API

@@ -1,3 +1,20 @@
-### Topic Revision / Questions Practise For Interviews
+## Revise Everything and Learn More!
 
-- Array and string
+## Web Development ✔
+
+- JS
+- Node
+- React
+- Gatsby
+- Next
+- Styled Component
+- Graphql
+- Apollo
+- Typescript
+- Testing
+
+- AWS / Devops / Firebase (optional)
+- Docker
+- Kubernates
+- CI/CD
+- Travis CI
